@@ -1,6 +1,7 @@
 import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { Dropdown } from '@/components/ui/Dropdown';
 import { RoleSwitcher } from './RoleSwitcher';
@@ -8,6 +9,7 @@ import { RoleSwitcher } from './RoleSwitcher';
 export function TopNavbar() {
   const { theme, setTheme } = useTheme();
   const { user, logout, isDemoMode } = useAuth();
+  const router = useRouter();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -55,14 +57,14 @@ export function TopNavbar() {
                   label: 'Profile',
                   value: 'profile',
                   onClick: () => {
-                    // Navigate to profile
+                    router.push(`/${user.role}/profile`);
                   },
                 },
                 {
                   label: 'Settings',
                   value: 'settings',
                   onClick: () => {
-                    // Navigate to settings
+                    router.push(`/${user.role}/profile`); // Fallback settings to profile
                   },
                 },
                 {
