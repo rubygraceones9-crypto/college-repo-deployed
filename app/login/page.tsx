@@ -211,6 +211,7 @@ export default function LoginPage() {
                 </label>
                 <button
                   type="button"
+                  onClick={() => alert('Please contact the admin to recover your password.')}
                   className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
                 >
                   Forgot password?
