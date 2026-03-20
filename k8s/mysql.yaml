@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secrets
+  labels:
+    app: college-eval-system
+type: Opaque
+stringData:
+  MYSQL_ROOT_PASSWORD: "rootpassword"
+  MYSQL_DATABASE: "cite_es"
+  MYSQL_USER: "ruby"
+  MYSQL_PASSWORD: "rubypassword"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  labels:
+    app: college-eval-system
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: college-eval-system
+    component: database
+spec:
+  selector:
+    matchLabels:
+      app: college-eval-system
+      component: database
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: college-eval-system
+        component: database
+    spec:
+      containers:
+      - image: mysql:8.0
+        name: mysql
+        envFrom:
+          - secretRef:
+              name: mysql-secrets
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  labels:
+    app: college-eval-system
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: college-eval-system
+    component: database
+  clusterIP: None

@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  labels:
+    app: college-eval-system
+type: Opaque
+stringData:
+  JWT_SECRET: "your-super-secret-jwt-key"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  labels:
+    app: college-eval-system
+data:
+  DB_HOST: "mysql"
+  DB_USER: "ruby"
+  DB_PASSWORD: "rubypassword"
+  DB_NAME: "cite_es"
+  NEXT_PUBLIC_API_URL: "/api"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: college-eval-app
+  labels:
+    app: college-eval-system
+    component: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: college-eval-system
+      component: web
+  template:
+    metadata:
+      labels:
+        app: college-eval-system
+        component: web
+    spec:
+      containers:
+      - name: college-eval-app
+        image: rubyones/college-evaluation-system:latest # Replace with your dockerhub repo, e.g. <username>/college-eval-system:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: app-config
+        - secretRef:
+            name: app-secrets
+        # Optional: readiness and liveness probes
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: college-eval-service
+  labels:
+    app: college-eval-system
+spec:
+  type: LoadBalancer # NodePort or ClusterIP if you have an Ingress Controller configured
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: college-eval-system
+    component: web
