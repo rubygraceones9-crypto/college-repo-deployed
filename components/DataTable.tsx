@@ -33,7 +33,7 @@ export function DataTable<T extends { id: string | number }>({
   if (isLoading) {
     return (
       <div className="space-y-2">
-        {[...Array(5)].map((_, i) => (
+        {[...new Array(5)].map((_, i) => (
           <div key={i} className="bg-gray-200 dark:bg-gray-700 rounded-lg h-12 animate-pulse" />
         ))}
       </div>

@@ -124,7 +124,7 @@ export async function GET(request: NextRequest) {
            ORDER BY period`,
           [decoded.userId]
         );
-        const performanceTrend = (trendResult || []).map((r: any) => ({ period: r.period, score: parseFloat(r.avg_score) }));
+        const performanceTrend = (trendResult || []).map((r: any) => ({ period: r.period, score: Number.parseFloat(r.avg_score) }));
 
         // department-wide trend for comparison
         const deptTrendResult: any = await query(
@@ -135,7 +135,7 @@ export async function GET(request: NextRequest) {
            GROUP BY DATE_FORMAT(e.submitted_at, '%Y-%m')
            ORDER BY period`
         );
-        const departmentTrend = (deptTrendResult || []).map((r: any) => ({ period: r.period, score: parseFloat(r.avg_score) }));
+        const departmentTrend = (deptTrendResult || []).map((r: any) => ({ period: r.period, score: Number.parseFloat(r.avg_score) }));
 
         // criteria_id in evaluation_responses actually references evaluation_questions.id (FK),
         // so the JOIN chain is: evaluation_responses.criteria_id → evaluation_questions.id
@@ -152,7 +152,7 @@ export async function GET(request: NextRequest) {
            ORDER BY avg_score DESC`,
           [decoded.userId]
         );
-        const criteriaBreakdown = (criteriaResult || []).map((r: any) => ({ criteriaName: r.name, score: parseFloat(r.avg_score) }));
+        const criteriaBreakdown = (criteriaResult || []).map((r: any) => ({ criteriaName: r.name, score: Number.parseFloat(r.avg_score) }));
 
         // count peer evaluations completed by this teacher
         const peerResult: any = await query(
@@ -214,7 +214,7 @@ export async function GET(request: NextRequest) {
          GROUP BY DATE_FORMAT(e.submitted_at, '%Y-%m')
          ORDER BY period`
       );
-      const performanceTrend = (trendResult || []).map((r: any) => ({ period: r.period, score: parseFloat(r.avg_score) }));
+      const performanceTrend = (trendResult || []).map((r: any) => ({ period: r.period, score: Number.parseFloat(r.avg_score) }));
 
       // program completion by academic year (proxy for program)
       const programResult: any = await query(
@@ -250,7 +250,7 @@ export async function GET(request: NextRequest) {
       const topInstructors = (instructorsResult || []).map((r: any, idx: number) => ({
         rank: idx + 1,
         instructor: { name: r.name },
-        overallScore: parseFloat(r.avg_score).toFixed ? parseFloat(r.avg_score).toFixed(2) : r.avg_score,
+        overallScore: Number.parseFloat(r.avg_score).toFixed ? Number.parseFloat(r.avg_score).toFixed(2) : r.avg_score,
       }));
 
       analytics = {

@@ -123,7 +123,7 @@ export async function POST(request: NextRequest) {
         const semesterNum = period.semester === '1st Semester' ? 1
           : period.semester === '2nd Semester' ? 2
           : period.semester === 'Summer' ? 3
-          : parseInt(period.semester) || null;
+          : Number.parseInt(period.semester) || null;
 
         const { curriculum } = await import('@/data/curriculum');
 
@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
 
           if (!program || !yearLevel) continue;
 
-          const yearNum = parseInt(yearLevel) || 0;
+          const yearNum = Number.parseInt(yearLevel) || 0;
 
           // Check if this student matches this group
           if (

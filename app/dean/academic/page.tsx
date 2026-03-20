@@ -46,7 +46,7 @@ const fetchApi = async (url: string, options?: RequestInit) => {
 const formatDate = (dateStr?: string) => {
   if (!dateStr) return '—';
   const d = new Date(dateStr);
-  if (isNaN(d.getTime())) return '—';
+  if (Number.isNaN(d.getTime())) return '—';
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
 

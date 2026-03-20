@@ -28,7 +28,7 @@ export function RatingScale({
     <div className="flex flex-col gap-2">
       {label && <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</label>}
       <div className="flex items-center gap-2">
-        {[...Array(maxScore)].map((_, index) => {
+        {[...new Array(maxScore)].map((_, index) => {
           const starValue = index + 1;
           const isFilled = starValue <= value;
 

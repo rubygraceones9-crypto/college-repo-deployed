@@ -141,7 +141,7 @@ export default function AuditLogs() {
                     const ts = log.timestamp ?? log.createdAt;
                     if (!ts) return 'N/A';
                     const date = new Date(ts);
-                    if (isNaN(date.getTime())) return 'Invalid date';
+                    if (Number.isNaN(date.getTime())) return 'Invalid date';
                     return formatDateTime(date);
                   },
                 },

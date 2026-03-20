@@ -5,7 +5,7 @@ export function DashboardSkeleton() {
     <div className="space-y-6 animate-pulse">
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {[...Array(4)].map((_, i) => (
+        {[...new Array(4)].map((_, i) => (
           <div
             key={i}
             className="bg-gray-200 dark:bg-gray-700 rounded-xl h-32"
@@ -19,7 +19,7 @@ export function DashboardSkeleton() {
       {/* Table Section */}
       <div className="space-y-2">
         <div className="bg-gray-200 dark:bg-gray-700 rounded-xl h-12" />
-        {[...Array(5)].map((_, i) => (
+        {[...new Array(5)].map((_, i) => (
           <div
             key={i}
             className="bg-gray-200 dark:bg-gray-700 rounded-xl h-8"
@@ -34,7 +34,7 @@ export function TableSkeleton() {
   return (
     <div className="space-y-2 animate-pulse">
       <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-12" />
-      {[...Array(8)].map((_, i) => (
+      {[...new Array(8)].map((_, i) => (
         <div key={i} className="bg-gray-200 dark:bg-gray-700 rounded-lg h-8" />
       ))}
     </div>
@@ -60,7 +60,7 @@ export function CardSkeleton() {
 export function FormSkeleton() {
   return (
     <div className="space-y-4 animate-pulse">
-      {[...Array(4)].map((_, i) => (
+      {[...new Array(4)].map((_, i) => (
         <div key={i} className="space-y-2">
           <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-4 w-1/4" />
           <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-10 w-full" />

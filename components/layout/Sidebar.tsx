@@ -30,7 +30,7 @@ export function Sidebar({ items, title, className = '' }: SidebarProps) {
       </button>
 
       {/* Sidebar overlay for mobile */}
-      {isOpen && (
+      {Boolean(isOpen) && (
         <div
           className="fixed inset-0 bg-black/50 z-30 md:hidden"
           onClick={() => setIsOpen(false)}

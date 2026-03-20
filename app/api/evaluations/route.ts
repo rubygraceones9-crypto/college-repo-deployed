@@ -331,7 +331,7 @@ export async function POST(request: NextRequest) {
           const semesterNum = period.semester === '1st Semester' ? 1
             : period.semester === '2nd Semester' ? 2
             : period.semester === 'Summer' ? 3
-            : parseInt(period.semester) || null;
+            : Number.parseInt(period.semester) || null;
 
           // Load curriculum once for all groups
           const { curriculum } = await import('@/data/curriculum');
@@ -347,7 +347,7 @@ export async function POST(request: NextRequest) {
             if (!program || !yearLevel) continue;
 
             // Convert year level string to number (e.g. '1st Year' → 1)
-            const yearNum = parseInt(yearLevel) || 0;
+            const yearNum = Number.parseInt(yearLevel) || 0;
 
             const programData = (curriculum as any)[program];
             const yearData = programData?.[yearLevel];

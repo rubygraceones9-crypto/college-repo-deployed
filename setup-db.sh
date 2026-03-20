@@ -31,13 +31,13 @@ echo ""
 
 # Create database
 echo -e "${YELLOW}Creating database...${NC}"
-if [ -z "$DB_PASSWORD" ]; then
+if [[ -z "$DB_PASSWORD" ]]; then
     mysql -h $DB_HOST -u $DB_USER < database/schema.sql
 else
     mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD < database/schema.sql
 fi
 
-if [ $? -eq 0 ]; then
+if [[ $? -eq 0 ]]; then
     echo -e "${GREEN}✓ Database created successfully${NC}"
 else
     echo -e "${RED}✗ Failed to create database${NC}"
@@ -46,13 +46,13 @@ fi
 
 # Verify database was created
 echo -e "${YELLOW}Verifying database...${NC}"
-if [ -z "$DB_PASSWORD" ]; then
+if [[ -z "$DB_PASSWORD" ]]; then
     mysql -h $DB_HOST -u $DB_USER -e "USE $DB_NAME; SELECT COUNT(*) as table_count FROM information_schema.tables WHERE table_schema='$DB_NAME';"
 else
     mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "USE $DB_NAME; SELECT COUNT(*) as table_count FROM information_schema.tables WHERE table_schema='$DB_NAME';"
 fi
 
-if [ $? -eq 0 ]; then
+if [[ $? -eq 0 ]]; then
     echo -e "${GREEN}✓ Database verification successful${NC}"
     echo -e "\n${GREEN}Setup complete!${NC}"
     echo -e "\nNext steps:"
