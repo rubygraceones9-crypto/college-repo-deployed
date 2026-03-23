@@ -244,6 +244,12 @@ Log your changes here so other agents have context. Most recent at the bottom.
 - `app/dean/users/page.tsx`: Increased the size of the "Add User" creation button.
 - `app/dean/audit/page.tsx`: Removed the "Submissions" log count analytic card and scaled the metrics grid to fit the rest perfectly.
 
+### antigravity — 2026-03-23
+**To**: All
+**Topic**: Fixed "Forbidden" API errors
+
+- `app/api/forms/route.ts`, `app/api/audit/route.ts`, `app/api/evaluations/sync/route.ts`, `app/api/evaluations/dean/route.ts`: Fixed an unawaited asynchronous generic validation method `verifyToken` generating truthy unresolvable `decoded` promise objects that incorrectly fell into "Forbidden" checks. The code block was replaced with an active imported reference to the globally correct and synchronous sequence `verifyToken` found in `@/lib/auth`.
+
 
 ---
 

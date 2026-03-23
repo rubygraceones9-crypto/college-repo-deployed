@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes';
 import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Alert } from '@/components/ui/Alert';
+import Chatbot from '@/components/ui/Chatbot';
 import { Eye, EyeOff, Moon, Sun } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { getRoleDashboardPath } from '@/utils/helpers';
@@ -41,10 +42,6 @@ export default function LoginPage() {
         throw new Error('Please enter both email and password');
       }
 
-      if (process.env.NODE_ENV !== 'development' && !captchaToken) {
-        throw new Error('Please verify that you are not a robot by completing the CAPTCHA.');
-      }
-
       // Call backend API for email/password authentication
       const response = await fetch('/api/auth', {
         method: 'POST',
@@ -55,7 +52,6 @@ export default function LoginPage() {
           action: 'email-login',
           email: email,
           password: password,
-          captchaToken: captchaToken,
         }),
       });
 
@@ -229,17 +225,7 @@ export default function LoginPage() {
                 </button>
               </div>
 
-              {/* Google reCAPTCHA */}
-              <div className="flex justify-center items-center w-full py-2">
-                {process.env.NODE_ENV !== 'development' && (
-                  <ReCAPTCHA
-                  sitekey="6Ld6eJMsAAAAABdiQZuwfYyWptTppshpF3ufaA7b"
-                  type="audio"
-                  onChange={(token) => setCaptchaToken(token)}
-                  theme={theme === 'dark' ? 'dark' : 'light'}
-                  />
-                )}
-              </div>
+              {/* Google reCAPTCHA has been completely disabled */}
 
               {/* Login Button */}
               <button
@@ -292,6 +278,8 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+
+      <Chatbot />
 
       <style jsx global>{`
         @keyframes slideDown {

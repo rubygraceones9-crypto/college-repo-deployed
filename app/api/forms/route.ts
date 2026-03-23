@@ -1,29 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query, queryOne } from '@/lib/db';
 
-let jwt: any = null;
-async function loadJWT() {
-  if (!jwt) {
-    const jwtModule = await import('jsonwebtoken');
-    jwt = jwtModule.default || jwtModule;
-  }
-  return jwt;
-}
-
-function getAuthToken(request: NextRequest): string | null {
-  const authHeader = request.headers.get('authorization');
-  if (!authHeader?.startsWith('Bearer ')) return null;
-  return authHeader.substring(7);
-}
-
-async function verifyToken(token: string) {
-  try {
-    const jwtLib = await loadJWT();
-    return jwtLib.verify(token, process.env.JWT_SECRET as string);
-  } catch {
-    return null;
-  }
-}
+import { verifyToken, getAuthToken } from '@/lib/auth';
 
 // Load criteria + questions for a form and return as structured array
 async function loadFormCriteria(formId: number) {

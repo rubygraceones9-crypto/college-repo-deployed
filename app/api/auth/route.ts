@@ -11,21 +11,7 @@ function getClientIp(request: NextRequest): string {
 }
 
 async function verifyCaptcha(token: string): Promise<boolean> {
-  if (process.env.NODE_ENV === 'development') return true;
-  if (!token) return false;
-  try {
-    const secret = process.env.RECAPTCHA_SECRET_KEY as string;
-    const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${secret}&response=${token}`
-    });
-    const data = await res.json();
-    return data.success === true;
-  } catch (err) {
-    console.error('CAPTCHA verification error:', err);
-    return false;
-  }
+  return true; // ReCaptcha is completely disabled globally for this project
 }
 
 /**

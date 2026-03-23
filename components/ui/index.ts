@@ -12,3 +12,4 @@ export { Alert } from './Alert';
 export { Avatar } from './Avatar';
 export { Dropdown } from './Dropdown';
 export { ProgressBar } from './ProgressBar';
+export { default as Chatbot } from './Chatbot';
