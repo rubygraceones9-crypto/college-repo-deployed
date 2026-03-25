@@ -1,0 +1,71 @@
+CRITICAL CODE_SMELL: app/api/curriculum/route.ts -> Refactor this function to reduce its Cognitive Complexity from 76 to the 15 allowed.
+MAJOR CODE_SMELL: app/api/curriculum/route.ts -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/api/curriculum/route.ts -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/api/curriculum/route.ts -> Prefer using an optional chain expression instead, as it's more concise and easier to read.
+MAJOR CODE_SMELL: app/api/curriculum/route.ts -> Prefer using an optional chain expression instead, as it's more concise and easier to read.
+MAJOR CODE_SMELL: app/api/evaluations/sync/route.ts -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/api/evaluations/sync/route.ts -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Prefer using an optional chain expression instead, as it's more concise and easier to read.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/reports/page.tsx -> Remove this useless assignment to variable "completionRateCalc".
+MAJOR CODE_SMELL: app/dean/reports/page.tsx -> Remove this useless assignment to variable "avgScoreCalc".
+MAJOR CODE_SMELL: app/dean/users/page.tsx -> Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+MINOR BUG: app/dean/users/page.tsx -> Visible, non-interactive elements with click handlers must have at least one keyboard listener.
+MAJOR CODE_SMELL: app/dean/users/page.tsx -> Do not use Array index in keys
+MAJOR CODE_SMELL: app/dean/users/page.tsx -> Do not use Array index in keys
+MAJOR CODE_SMELL: app/dean/users/page.tsx -> Do not use Array index in keys
+MAJOR CODE_SMELL: app/login/page.tsx -> Remove this useless assignment to variable "theme".
+MAJOR CODE_SMELL: app/student/dashboard/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/student/history/page.tsx -> Prefer using an optional chain expression instead, as it's more concise and easier to read.
+MAJOR CODE_SMELL: app/student/history/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/teacher/classes/page.tsx -> Remove this useless assignment to variable "router".
+CRITICAL CODE_SMELL: app/teacher/peer/page.tsx -> Refactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.
+MAJOR CODE_SMELL: app/teacher/peer/page.tsx -> Prefer using an optional chain expression instead, as it's more concise and easier to read.
+MAJOR CODE_SMELL: app/teacher/peer/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/teacher/peer/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/teacher/peer/page.tsx -> Do not use Array index in keys
+MAJOR CODE_SMELL: app/teacher/peer/page.tsx -> Do not use Array index in keys
+MAJOR CODE_SMELL: app/teacher/peer/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/login/page.tsx -> Remove this useless assignment to variable "captchaToken".
+MAJOR CODE_SMELL: app/login/page.tsx -> Remove this useless assignment to variable "setCaptchaToken".
+MAJOR CODE_SMELL: app/signup/page.tsx -> Remove this useless assignment to variable "captchaToken".
+MAJOR CODE_SMELL: app/signup/page.tsx -> Remove this useless assignment to variable "setCaptchaToken".
+MAJOR CODE_SMELL: components/ui/Chatbot.tsx -> Remove this useless assignment to variable "theme".
+CRITICAL CODE_SMELL: app/api/curriculum/route.ts -> Refactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.
+MAJOR CODE_SMELL: app/api/curriculum/route.ts -> Prefer using an optional chain expression instead, as it's more concise and easier to read.
+CRITICAL CODE_SMELL: tools/migrate_subjects.js -> Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.
+MAJOR BUG: tools/migrate_subjects.js -> TypeError can be thrown as "currContent" might be null or undefined here.
+CRITICAL CODE_SMELL: app/api/evaluation_periods/route.ts -> Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.
+CRITICAL CODE_SMELL: app/api/evaluations/route.ts -> Refactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.
+CRITICAL CODE_SMELL: app/api/users/route.ts -> Refactor this function to reduce its Cognitive Complexity from 30 to the 15 allowed.
+MAJOR CODE_SMELL: app/dean/academic/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/academic/page.tsx -> Extract this nested ternary operation into an independent statement.
+CRITICAL CODE_SMELL: app/dean/academic/page.tsx -> Refactor this code to not nest functions more than 4 levels deep.
+MAJOR CODE_SMELL: app/dean/academic/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/academic/page.tsx -> Extract this nested ternary operation into an independent statement.
+CRITICAL CODE_SMELL: app/dean/evaluation-setup/page.tsx -> Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.
+MAJOR CODE_SMELL: app/dean/evaluation-setup/page.tsx -> Remove this useless assignment to variable "currLoading".
+MAJOR CODE_SMELL: app/dean/evaluation-setup/page.tsx -> Use <input type="button">, <input type="image">, <input type="reset">, <input type="submit">, or <button> instead of the "button" role to ensure accessibility across all devices.
+MAJOR CODE_SMELL: app/dean/evaluation-setup/page.tsx -> Extract this nested ternary operation into an independent statement.
+CRITICAL CODE_SMELL: app/dean/evaluations/page.tsx -> Refactor this function to reduce its Cognitive Complexity from 27 to the 15 allowed.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Remove this useless assignment to variable "selectedDeanTeacher".
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Do not use Array index in keys
+MAJOR CODE_SMELL: app/dean/forms/page.tsx -> A form label must be associated with a control.
+CRITICAL CODE_SMELL: app/dean/reports/page.tsx -> Refactor this code to not nest functions more than 4 levels deep.
+MAJOR CODE_SMELL: app/dean/reports/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/reports/page.tsx -> Extract this nested ternary operation into an independent statement.
+CRITICAL CODE_SMELL: app/dean/reports/page.tsx -> Refactor this code to not nest functions more than 4 levels deep.
+MAJOR CODE_SMELL: app/dean/settings/page.tsx -> Remove this useless assignment to variable "isLoading".
+CRITICAL CODE_SMELL: app/dean/subjects/page.tsx -> Refactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.
+MAJOR CODE_SMELL: app/dean/subjects/page.tsx -> 'If' statement should not be the only statement in 'else' block
+CRITICAL CODE_SMELL: app/student/dashboard/page.tsx -> Refactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.
+MAJOR CODE_SMELL: app/student/history/page.tsx -> Move this array "sort" operation to a separate statement or replace it with "toSorted".
+CRITICAL BUG: app/student/history/page.tsx -> Provide a compare function that depends on "String.localeCompare", to reliably sort elements alphabetically.
+MAJOR CODE_SMELL: app/teacher/dashboard/page.tsx -> Extract this nested ternary operation into an independent statement.
+CRITICAL BUG: app/teacher/results/page.tsx -> Provide a compare function that depends on "String.localeCompare", to reliably sort elements alphabetically.
+MAJOR CODE_SMELL: app/teacher/results/page.tsx -> Move this array "sort" operation to a separate statement or replace it with "toSorted".
+MAJOR CODE_SMELL: app/teacher/results/page.tsx -> Extract this nested ternary operation into an independent statement.
+MAJOR CODE_SMELL: app/dean/evaluations/page.tsx -> Use <input type="button">, <input type="image">, <input type="reset">, <input type="submit">, or <button> instead of the "button" role to ensure accessibility across all devices.

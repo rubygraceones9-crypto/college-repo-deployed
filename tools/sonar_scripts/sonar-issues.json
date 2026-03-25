@@ -1,0 +1,702 @@
+[
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 76 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Prefer `Number.parseInt` over `parseInt`.",
+    "rule": "typescript:S7773"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Handle this exception or don't catch it at all.",
+    "rule": "typescript:S2486"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+    "rule": "typescript:S6582"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+    "rule": "typescript:S6582"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/evaluations/sync/route.ts",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/evaluations/sync/route.ts",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/academic/page.tsx",
+    "message": "Handle this exception or don't catch it at all.",
+    "rule": "typescript:S2486"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+    "rule": "typescript:S6582"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/profile/page.tsx",
+    "message": "Remove this unused import of 'CardDescription'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/reports/page.tsx",
+    "message": "Remove this useless assignment to variable \"completionRateCalc\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/reports/page.tsx",
+    "message": "Remove this useless assignment to variable \"avgScoreCalc\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/users/page.tsx",
+    "message": "Mark the props of the component as read-only.",
+    "rule": "typescript:S6759"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/users/page.tsx",
+    "message": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+    "rule": "typescript:S6848"
+  },
+  {
+    "severity": "MINOR",
+    "type": "BUG",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/users/page.tsx",
+    "message": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+    "rule": "typescript:S1082"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/users/page.tsx",
+    "message": "Do not use Array index in keys",
+    "rule": "typescript:S6479"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/users/page.tsx",
+    "message": "Do not use Array index in keys",
+    "rule": "typescript:S6479"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/users/page.tsx",
+    "message": "Do not use Array index in keys",
+    "rule": "typescript:S6479"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/login/page.tsx",
+    "message": "Remove this useless assignment to variable \"theme\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/dashboard/page.tsx",
+    "message": "Prefer `.some(…)` over `.find(…)`.",
+    "rule": "typescript:S7754"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/dashboard/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/history/page.tsx",
+    "message": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+    "rule": "typescript:S6582"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/history/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/classes/page.tsx",
+    "message": "Remove this unused import of 'ExternalLink'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/classes/page.tsx",
+    "message": "Remove this useless assignment to variable \"router\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/classes/page.tsx",
+    "message": "Prefer `.some(…)` over `.find(…)`.",
+    "rule": "typescript:S7754"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/dashboard/page.tsx",
+    "message": "Prefer `.some(…)` over `.find(…)`.",
+    "rule": "typescript:S7754"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Remove this unused import of 'MessageSquare'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+    "rule": "typescript:S6582"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "This assertion is unnecessary since it does not change the type of the expression.",
+    "rule": "typescript:S4325"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Do not use Array index in keys",
+    "rule": "typescript:S6479"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Do not use Array index in keys",
+    "rule": "typescript:S6479"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/peer/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:components/ui/ConfirmModal.tsx",
+    "message": "Replace this union type with a type alias.",
+    "rule": "typescript:S4323"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/login/page.tsx",
+    "message": "Remove this unused import of 'ReCAPTCHA'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/login/page.tsx",
+    "message": "Remove this useless assignment to variable \"captchaToken\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/login/page.tsx",
+    "message": "Remove this useless assignment to variable \"setCaptchaToken\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/signup/page.tsx",
+    "message": "Remove this unused import of 'ReCAPTCHA'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/signup/page.tsx",
+    "message": "Remove this useless assignment to variable \"captchaToken\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/signup/page.tsx",
+    "message": "Remove this useless assignment to variable \"setCaptchaToken\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:components/ui/Chatbot.tsx",
+    "message": "Remove this unused import of 'MessageSquare'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:components/ui/Chatbot.tsx",
+    "message": "Remove this useless assignment to variable \"theme\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/curriculum/route.ts",
+    "message": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+    "rule": "typescript:S6582"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:tools/migrate_subjects.js",
+    "message": "Prefer `node:fs` over `fs`.",
+    "rule": "javascript:S7772"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:tools/migrate_subjects.js",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+    "rule": "javascript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "BUG",
+    "component": "rubygraceones9-crypto_college-evaluation-system:tools/migrate_subjects.js",
+    "message": "TypeError can be thrown as \"currContent\" might be null or undefined here.",
+    "rule": "javascript:S2259"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/evaluation_periods/route.ts",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/evaluations/route.ts",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/api/users/route.ts",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 30 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/academic/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/academic/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/academic/page.tsx",
+    "message": "Refactor this code to not nest functions more than 4 levels deep.",
+    "rule": "typescript:S2004"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/academic/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/academic/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/classes/page.tsx",
+    "message": "Prefer using `Set#size` instead of `Array#length`.",
+    "rule": "typescript:S7777"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/dashboard/page.tsx",
+    "message": "Remove this unused import of 'Download'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/dashboard/page.tsx",
+    "message": "Remove this unused import of 'FilePlus'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/dashboard/page.tsx",
+    "message": "Remove this unused import of 'UserPlus'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/dashboard/page.tsx",
+    "message": "Remove this unused import of 'ClipboardList'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluation-setup/page.tsx",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluation-setup/page.tsx",
+    "message": "Remove this useless assignment to variable \"currLoading\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluation-setup/page.tsx",
+    "message": "Use <input type=\"button\">, <input type=\"image\">, <input type=\"reset\">, <input type=\"submit\">, or <button> instead of the \"button\" role to ensure accessibility across all devices.",
+    "rule": "typescript:S6819"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluation-setup/page.tsx",
+    "message": "Unexpected negated condition.",
+    "rule": "typescript:S7735"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluation-setup/page.tsx",
+    "message": "Unexpected negated condition.",
+    "rule": "typescript:S7735"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluation-setup/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 27 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Remove this useless assignment to variable \"selectedDeanTeacher\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Unexpected negated condition.",
+    "rule": "typescript:S7735"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Do not use Array index in keys",
+    "rule": "typescript:S6479"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/forms/page.tsx",
+    "message": "A form label must be associated with a control.",
+    "rule": "typescript:S6853"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/reports/page.tsx",
+    "message": "Refactor this code to not nest functions more than 4 levels deep.",
+    "rule": "typescript:S2004"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/reports/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/reports/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/reports/page.tsx",
+    "message": "Refactor this code to not nest functions more than 4 levels deep.",
+    "rule": "typescript:S2004"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/settings/page.tsx",
+    "message": "Remove this unused import of 'Lock'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/settings/page.tsx",
+    "message": "Remove this useless assignment to variable \"isLoading\".",
+    "rule": "typescript:S1854"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/subjects/page.tsx",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/subjects/page.tsx",
+    "message": "'If' statement should not be the only statement in 'else' block",
+    "rule": "typescript:S6660"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/subjects/page.tsx",
+    "message": "Unexpected negated condition.",
+    "rule": "typescript:S7735"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/signup/page.tsx",
+    "message": "Remove this unused import of 'getRoleDashboardPath'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/dashboard/page.tsx",
+    "message": "Refactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.",
+    "rule": "typescript:S3776"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/history/page.tsx",
+    "message": "Remove this unused import of 'FileText'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/history/page.tsx",
+    "message": "Move this array \"sort\" operation to a separate statement or replace it with \"toSorted\".",
+    "rule": "typescript:S4043"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "BUG",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/student/history/page.tsx",
+    "message": "Provide a compare function that depends on \"String.localeCompare\", to reliably sort elements alphabetically.",
+    "rule": "typescript:S2871"
+  },
+  {
+    "severity": "MINOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/classes/page.tsx",
+    "message": "Remove this unused import of 'Users'.",
+    "rule": "typescript:S1128"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/dashboard/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "CRITICAL",
+    "type": "BUG",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/results/page.tsx",
+    "message": "Provide a compare function that depends on \"String.localeCompare\", to reliably sort elements alphabetically.",
+    "rule": "typescript:S2871"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/results/page.tsx",
+    "message": "Move this array \"sort\" operation to a separate statement or replace it with \"toSorted\".",
+    "rule": "typescript:S4043"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/teacher/results/page.tsx",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "rule": "typescript:S3358"
+  },
+  {
+    "severity": "MAJOR",
+    "type": "CODE_SMELL",
+    "component": "rubygraceones9-crypto_college-evaluation-system:app/dean/evaluations/page.tsx",
+    "message": "Use <input type=\"button\">, <input type=\"image\">, <input type=\"reset\">, <input type=\"submit\">, or <button> instead of the \"button\" role to ensure accessibility across all devices.",
+    "rule": "typescript:S6819"
+  }
+]
