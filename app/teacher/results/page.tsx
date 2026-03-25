@@ -62,7 +62,7 @@ export default function TeacherResults() {
   const semesters = [
     { value: 'current', label: 'Current Semester' },
     { value: 'all', label: 'All Semesters' },
-    ...availableSemesters.sort().reverse().map((s: string) => ({ value: s, label: s })),
+    ...[...availableSemesters].sort((a: string, b: string) => b.localeCompare(a)).map((s: string) => ({ value: s, label: s })),
   ];
 
   const filteredEvals = allReceivedEvals.filter((e: any) => {

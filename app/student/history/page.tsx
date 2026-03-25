@@ -61,7 +61,7 @@ export default function StudentHistory() {
   const semesters = [
     { value: 'current', label: 'Current Semester' },
     { value: 'all', label: 'All Semesters' },
-    ...availableSemesters.sort().reverse().map((s: string) => ({ value: s, label: s })),
+    ...[...availableSemesters].sort((a: string, b: string) => b.localeCompare(a)).map((s: string) => ({ value: s, label: s })),
   ];
 
   const q = searchTerm.trim().toLowerCase();

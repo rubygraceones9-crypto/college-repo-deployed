@@ -31,10 +31,10 @@ async function migrate() {
   let dataMatch = fileContent.match(/export const curriculum = (\{[\s\S]*?\});/);
   
   if (dataMatch) {
-    let currContent;
+    let currContent = {};
     eval('currContent = ' + dataMatch[1]);
     
-    for (const prog of Object.keys(currContent)) {
+    for (const prog of Object.keys(currContent || {})) {
       for (const yr of Object.keys(currContent[prog])) {
         for (const sem of Object.keys(currContent[prog][yr])) {
           for (const subj of currContent[prog][yr][sem]) {
