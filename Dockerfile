@@ -1,43 +1,22 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
-
-# Install dependencies
-COPY package.json package-lock.json ./
-RUN npm ci
-
-# Copy the rest of the application
+COPY package*.json ./
+# Use --legacy-peer-deps if needed
+RUN npm install
 COPY . .
-
-# Build the Next.js app in standalone mode
 RUN npm run build
 
-# Production image
 FROM node:20-alpine AS runner
 WORKDIR /app
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/lib ./lib
+COPY --from=builder /app/database ./database
+COPY --from=builder /app/tools ./tools
 
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-
-# Change the ownership to a non-root user
-RUN addgroup --system --gid 1001 nodejs \
-    && adduser --system --uid 1001 nextjs
-
-# Copy static assets and standalone build from builder
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/tools ./tools
-COPY --from=builder --chown=nextjs:nodejs /app/database ./database
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
-
-# Tooling dependencies excluded by Next.js standalone tracing
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
-
-USER nextjs
-
 EXPOSE 3000
-
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
