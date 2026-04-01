@@ -72,7 +72,19 @@ export default function StudentEvaluations() {
   // Filter periods to student-to-teacher only
   const studentPeriods = useMemo(() => {
     if (!periodData?.periods) return [];
-    return periodData.periods.filter((p: any) => p.form_type === 'student-to-teacher');
+    return periodData.periods.filter((p: any) => {
+      if (p.form_type === 'student-to-teacher') return true;
+      if (p.form_type) return false;
+
+      // Legacy fallback: if form join is missing but assignments exist, treat as student flow.
+      try {
+        const parsed = typeof p.assignments_json === 'string' ? JSON.parse(p.assignments_json) : p.assignments_json;
+        const groups = Array.isArray(parsed?.groups) ? parsed.groups : [];
+        return groups.length > 0;
+      } catch {
+        return false;
+      }
+    });
   }, [periodData]);
 
   // All pending evaluations
@@ -246,7 +258,7 @@ export default function StudentEvaluations() {
     );
   }
 
-  if (studentPeriods.length === 0) {
+  if (studentPeriods.length === 0 && pendingEvaluations.length === 0) {
     return (
       <Alert variant="info" title="No Active Evaluations">
         There are no active student-to-teacher evaluation periods at this time.

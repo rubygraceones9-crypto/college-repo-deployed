@@ -285,6 +285,18 @@ Log your changes here so other agents have context. Most recent at the bottom.
   - `npm run type-check` still fails due a pre-existing issue in `.next/dev/types/app/api/curriculum/route.ts` (`buildCurriculum` export mismatch).
   - `npm run lint` currently fails because `next lint` is interpreted as a directory argument by the installed Next.js CLI.
 
+### gpt-5-codex — 2026-04-02
+**To**: All
+**Topic**: Student evaluations visibility repair + form deletion safeguard
+
+- `app/student/dashboard/page.tsx`: Fixed active period detection so students can still see active student-evaluation periods when legacy records have `form_type = null` but valid `assignments_json`.
+- `app/student/evaluations/page.tsx`: Added the same legacy-safe student period fallback and changed the empty-state gate to avoid hiding real pending evaluations.
+- `app/api/forms/route.ts`: Blocked form deletion when a form is still linked by `evaluation_periods`, preventing orphaned active periods that break student flows.
+- Hostinger live DB repair (manual):
+  - Added missing `is_archived` columns to `courses` and `evaluations` tables (default `0`) so student API queries stop returning empty fallback results.
+  - Re-linked active student-like period with missing form (`period_id=2`) to a valid `student-to-teacher` form (`form_id=4`), cloned from the available form template.
+  - Verified live APIs now return student evaluations/courses/active periods for `Nyco Paderayon`.
+
 ---
 
 ## Coding Standards

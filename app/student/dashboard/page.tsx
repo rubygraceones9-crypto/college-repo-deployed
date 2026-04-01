@@ -38,15 +38,27 @@ export default function StudentDashboard() {
   const isLoading = evalLoading || coursesLoading || periodLoading;
   const evaluations = (evalData?.evaluations || []).filter((e: any) => e.evaluation_type === 'teacher');
 
+  // Legacy-safe active period detection:
+  // some historical periods may have missing form joins (form_type=null) but valid assignments_json.
+  const activeStudentPeriods = (periodData?.periods || []).filter((p: any) => {
+    if (p.form_type === 'student-to-teacher') return true;
+    if (p.form_type) return false;
+    try {
+      const parsed = typeof p.assignments_json === 'string' ? JSON.parse(p.assignments_json) : p.assignments_json;
+      const groups = Array.isArray(parsed?.groups) ? parsed.groups : [];
+      return groups.length > 0;
+    } catch {
+      return false;
+    }
+  });
+
   const pendingEvals = evaluations.filter((e: any) => {
     if (e.status === 'submitted' || e.status === 'locked') return false;
     const periodStatus = e.period?.status || e.period_status;
     return periodStatus === 'active';
   });
 
-  const activePeriod = (evaluations.length > 0) 
-    ? (pendingEvals[0]?.period || evaluations[0]?.period) 
-    : null;
+  const activePeriod = activeStudentPeriods[0] || pendingEvals[0]?.period || evaluations[0]?.period || null;
 
   let deadline = null;
   if (activePeriod?.end_date) {

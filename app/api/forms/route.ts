@@ -200,6 +200,20 @@ export async function DELETE(request: NextRequest) {
     const id = url.searchParams.get('id');
     if (!id) return NextResponse.json({ error: 'id query param required' }, { status: 400 });
 
+    // Prevent orphaned evaluation periods that would break student/teacher flows.
+    const linkedPeriod: any = await queryOne(
+      'SELECT id, name, status FROM evaluation_periods WHERE form_id = ? ORDER BY id DESC LIMIT 1',
+      [id]
+    );
+    if (linkedPeriod) {
+      return NextResponse.json(
+        {
+          error: `This form is currently linked to evaluation period "${linkedPeriod.name}" (${linkedPeriod.status}). Reassign that period before deleting this form.`,
+        },
+        { status: 400 }
+      );
+    }
+
     // CASCADE deletes criteria and questions automatically
     await query('DELETE FROM evaluation_forms WHERE id = ?', [id]);
     return NextResponse.json({ success: true });
