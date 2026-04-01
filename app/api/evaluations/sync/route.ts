@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query, queryOne } from '@/lib/db';
 
 import { verifyToken, getAuthToken } from '@/lib/auth';
+import { buildCurriculum } from '@/lib/curriculum';
 
 /**
  * POST /api/evaluations/sync
@@ -128,7 +129,6 @@ export async function syncUserEvaluations(userId: string, role: string) {
           : period.semester === 'Summer' ? 3
           : Number.parseInt(period.semester) || null;
 
-        const { buildCurriculum } = await import('@/app/api/curriculum/route');
         const curriculum = await buildCurriculum();
 
         for (const group of groups) {

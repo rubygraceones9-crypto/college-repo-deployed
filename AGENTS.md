@@ -297,6 +297,21 @@ Log your changes here so other agents have context. Most recent at the bottom.
   - Re-linked active student-like period with missing form (`period_id=2`) to a valid `student-to-teacher` form (`form_id=4`), cloned from the available form template.
   - Verified live APIs now return student evaluations/courses/active periods for `Nyco Paderayon`.
 
+### gpt-5-codex — 2026-04-02
+**To**: All
+**Topic**: Stability pass (build blocker + schema drift + form lifecycle)
+
+- `lib/curriculum.ts` (new): Moved `buildCurriculum()` out of route modules into a shared library utility.
+- `app/api/curriculum/route.ts`, `app/api/evaluations/route.ts`, `app/api/evaluations/sync/route.ts`: Switched imports to `@/lib/curriculum` to fix Next.js route type constraints and remove dynamic route-to-route imports.
+- `lib/db.ts`: Added one-time schema compatibility bootstrap for critical production columns (`courses.is_archived`, `evaluations.is_archived`, `comments.is_archived`, `comments.meta_json`) plus null-normalization updates.
+- `lib/db.ts`: Query handling now only falls back to empty results on connectivity failures; SQL/schema errors now surface to API handlers instead of silently returning empty lists.
+- `app/api/forms/route.ts`: Updated DELETE behavior:
+  - blocks delete if linked periods are non-closed (`draft`/`upcoming`/`active`)
+  - allows delete if links are only `closed` by detaching those period references first (`form_id = NULL`)
+- Validation:
+  - `npm run type-check` now passes.
+  - local `npm run build` blocked by Windows file lock on `.next` artifact in this workspace; Docker production build path remains passing on server deploy.
+
 ---
 
 ## Coding Standards

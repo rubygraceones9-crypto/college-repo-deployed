@@ -200,18 +200,24 @@ export async function DELETE(request: NextRequest) {
     const id = url.searchParams.get('id');
     if (!id) return NextResponse.json({ error: 'id query param required' }, { status: 400 });
 
-    // Prevent orphaned evaluation periods that would break student/teacher flows.
-    const linkedPeriod: any = await queryOne(
-      'SELECT id, name, status FROM evaluation_periods WHERE form_id = ? ORDER BY id DESC LIMIT 1',
+    const linkedPeriods: any = await query(
+      'SELECT id, name, status FROM evaluation_periods WHERE form_id = ? ORDER BY id DESC',
       [id]
     );
-    if (linkedPeriod) {
+    const activeOrFutureLinks = (linkedPeriods || []).filter((p: any) => p.status !== 'closed');
+    if (activeOrFutureLinks.length > 0) {
+      const first = activeOrFutureLinks[0];
       return NextResponse.json(
         {
-          error: `This form is currently linked to evaluation period "${linkedPeriod.name}" (${linkedPeriod.status}). Reassign that period before deleting this form.`,
+          error: `This form is linked to "${first.name}" (${first.status}). Close or reassign linked periods before deleting this form.`,
         },
         { status: 400 }
       );
+    }
+
+    // Historical-only links (closed periods) are safe to detach.
+    if ((linkedPeriods || []).length > 0) {
+      await query('UPDATE evaluation_periods SET form_id = NULL WHERE form_id = ?', [id]);
     }
 
     // CASCADE deletes criteria and questions automatically

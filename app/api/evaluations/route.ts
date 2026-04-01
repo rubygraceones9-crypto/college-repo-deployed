@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query, queryOne } from '@/lib/db';
 import { verifyToken, getAuthToken } from '@/lib/auth';
+import { buildCurriculum } from '@/lib/curriculum';
 
 
 // request payload used by students/teachers when submitting responses
@@ -358,7 +359,6 @@ export async function POST(request: NextRequest) {
             : Number.parseInt(period.semester) || null;
 
           // Load curriculum once for all groups
-          const { buildCurriculum } = await import('@/app/api/curriculum/route');
           const curriculum = await buildCurriculum();
 
           for (const group of groups) {
@@ -625,4 +625,3 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: 'Internal server error', details: String(error) }, { status: 500 });
   }
 }
-
