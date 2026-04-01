@@ -90,20 +90,23 @@ async function ensureSchemaCompatibility() {
       'semester',
     ];
 
-    const hasExpectedUnique = Array.from(indexMap.values()).some((item) =>
-      item.nonUnique === 0 &&
+    const uniqueIndexes = Array.from(indexMap.entries())
+      .filter(([name, item]) => item.nonUnique === 0 && name.toUpperCase() !== 'PRIMARY')
+      .map(([name, item]) => ({ name, columns: item.columns }));
+
+    const hasExpectedUnique = uniqueIndexes.some((item) =>
       item.columns.length === expectedColumns.length &&
       item.columns.every((col, idx) => col === expectedColumns[idx])
     );
 
-    if (!hasExpectedUnique) {
-      const uniqueIndexesToDrop = Array.from(indexMap.entries())
-        .filter(([name, item]) => item.nonUnique === 0 && name.toUpperCase() !== 'PRIMARY')
-        .map(([name]) => name);
+    const dropIndex = async (idx: string) => {
+      const escaped = idx.replace(/`/g, '``');
+      await connection.execute(`ALTER TABLE courses DROP INDEX \`${escaped}\``);
+    };
 
-      for (const idx of uniqueIndexesToDrop) {
-        const escaped = idx.replace(/`/g, '``');
-        await connection.execute(`ALTER TABLE courses DROP INDEX \`${escaped}\``);
+    if (!hasExpectedUnique) {
+      for (const item of uniqueIndexes) {
+        await dropIndex(item.name);
       }
 
       await connection.execute(
@@ -111,6 +114,15 @@ async function ensureSchemaCompatibility() {
          ADD UNIQUE KEY unique_course_assignment
          (code, teacher_id, section, course_program, year_level, academic_year, semester)`
       );
+    } else {
+      // Legacy dumps may still keep an extra UNIQUE(code), which conflicts with multi-section assignments.
+      const legacyCodeUniqueIndexes = uniqueIndexes
+        .filter((item) => item.columns.length === 1 && item.columns[0] === 'code')
+        .map((item) => item.name);
+
+      for (const idx of legacyCodeUniqueIndexes) {
+        await dropIndex(idx);
+      }
     }
   } finally {
     connection.release();

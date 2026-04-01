@@ -323,6 +323,7 @@ Log your changes here so other agents have context. Most recent at the bottom.
   - ensure scheduling columns exist on `courses` (`section`, `academic_year`, `semester`, `course_program`, `year_level`)
   - auto-migrate legacy unique indexes on `courses` to assignment-level uniqueness:
     - `UNIQUE(code, teacher_id, section, course_program, year_level, academic_year, semester)`
+  - drop lingering legacy `UNIQUE(code)` when present alongside the new composite key to prevent multi-section collisions.
 - `database/cite_es.sql`, `database/live_schema.sql`: Aligned course unique index definitions with runtime expectations to avoid future environment drift.
 - Validation:
   - `npm run type-check` passes.
